@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe Data Object</title>
+  </head>
+  <body>
+    <script>
+      const person = {};
+
+      // menambah atau mengubah
+
+      /* cara 1 */
+      person["nama"] = "rio aditya";
+      person["nationality"] = "indonesia";
+      person["umur"] = 22;
+
+      console.table(person);
+      delete person["nationality"];
+      console.table(person);
+
+      const orang = {
+        "nama lengkap": "rio aditya",
+        nationality: "indonesia",
+        umur: 22,
+      };
+
+      console.info(orang);
+      //delete orang["umur"];
+      //console.info(orang);
+
+      // mengakses object
+
+      console.info(`Nama : ${orang["nama lengkap"]}`);
+      console.info(`Nationality : ${orang.nationality}`); // console.info(`Nationality : ${orang["nationality"]}`)
+      console.info(`Umur : ${orang.umur}`); // console.info(`Umur : ${orang.umur}`)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe Data Array</title>
+  </head>
+  <body>
+    <script>
+      let arrayKosong = [];
+
+      let arrayNama = ["Rio", "Aditya", "Novanto"];
+
+      let names = [];
+      names.push("rio");
+      names.push("aditya", "novanto");
+      names.push("budi", "joko", "anwar");
+      console.table(names);
+
+      console.info(names[0]);
+      console.info(names[1]);
+      console.info(names[2]);
+      names[0] = "adi";
+      console.table(names);
+
+      delete names[0]; // indexnya hanya di-hidden, sebenarnya masih bisa dipanggil atau diubah lagi
+      console.table(names);
+
+      names[0] = "halo";
+      console.table(names);
+
+      let test = [["rio", "aditya", "novanto"]];
+
+      console.info(test[0][2]);
+      test[0][3] = "test";
+      console.info(test[0][3]);
+      test.push(["tessss"]);
+      console.info(test);
+      console.info(test[1][0]);
+      delete test[1][0];
+      console.info(test[1][0]);
+      console.table(test);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konversi String dan Number</title>
+  </head>
+  <body>
+    <script>
+      const value1 = parseInt("1");
+      const value2 = 1;
+      const sum = value1 + value2;
+      document.writeln(`<p>${sum}</p>`);
+
+      document.writeln(`<p>${parseInt("1.1")}</p>`);
+      document.writeln(`<p>${parseFloat("1.1")}</p>`);
+      document.writeln(`<p>${Number("1.1")}</p>`);
+
+      // number to string
+      const a = 1;
+      const b = 2;
+      const total = a.toString() + b.toString();
+      document.writeln(`<p>${total}</p>`);
+
+      // NaN
+      document.writeln(`<p>${parseInt("salah")}</p>`);
+      document.writeln(`<p>${parseInt("2222salah")}</p>`);
+      document.writeln(`<p>${parseFloat("1234salah")}</p>`);
+      document.writeln(`<p>tes ${parseInt("salah2222")}</p>`);
+      document.writeln(`<p>${parseFloat("salah1111")}</p>`);
+
+      document.writeln(`<p>${Number("salah")}</p>`);
+      document.writeln(`<p>${Number("123123salah")}</p>`);
+      document.writeln(`<p>${Number("999002sz")}</p>`);
+
+      /*    intinnya, kalau Number() itu tidak akan mentolerir jika selain number apapun (bulat atau pecahan) 
+            kalau parseInt dan parseFloat, angka yang ada nanti itu tetap akan terkonvert tapi yang string enggak. tapii, kalau di depannya udah ada selain number dia akan NaN. kesalahan atau selain number ada di belakang masih ditolerir, tetapi kalau di depan gak
+      */
+
+      const first = Number("salah"); // NaN
+      const totalNumber = first + 100; // NaN
+      document.writeln(totalNumber);
+      // kalau sudah NaN, dioperasikan dengan yang lainnya akan tetap NaN
+
+      /* pengecekan NaN atau bukan */
+      const tes = isNaN("salah");
+      document.writeln(`<p>${tes}</p>`);
+      document.writeln(`<p>${isNaN(first)}</p>`);
+      document.writeln(`<p>${isNaN(totalNumber)}</p>`);
+      document.writeln(`<p>${isNaN(100)}</p>`);
+    </script>
+  </body>
+</html>

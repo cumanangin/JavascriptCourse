@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      const name = "cumaangin";
+      const template = `Name : ${name}`;
+      console.info(template);
+
+      const firstName = "rio";
+      const middleName = "aditya";
+      const lastName = "novanto";
+      const fullName = `Name : ${firstName} ${middleName} ${lastName}`;
+      console.info(fullName);
+
+      const nilai = 80;
+      const template2 = `Name : ${fullName} lulus : ${nilai > 70}`;
+      console.info(template2);
+
+      const multiLine = `Nama rio, oshi banyak, 
+lagi suka belajar javascript,
+bismillah sukses`; // backtic support multiline
+      document.writeln("<pre>");
+      document.writeln(multiLine);
+      document.writeln("</pre>");
+    </script>
+  </body>
+</html>
