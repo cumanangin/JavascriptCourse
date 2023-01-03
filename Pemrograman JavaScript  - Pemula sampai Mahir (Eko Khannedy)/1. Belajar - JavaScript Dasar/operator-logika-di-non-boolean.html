@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operator Logika di Non-Boolean</title>
+  </head>
+  <body>
+    <script>
+      // operator OR dibaca dari paling kiri
+      // dan boolean yang dijadikan pembandingan ialah yang truthy
+      // bila kiri kanan itu truthy, maka yang paling kiri yang diambil
+      // apabila kiri dan kanan itu false, maka yang akan diambil ialah yang bagian kanan
+      console.info("hello" || "");
+      console.info("" || []);
+      console.info(0 || "NOL");
+      console.info(null || "null");
+      console.info(undefined || "UNDEFINED");
+      console.info(0 || false);
+
+      // operator AND sama, dibaca dari paling kiri
+      // operator ini akan mengambil nilai pertama untuk perbandingan itu yang falsy (kebalikan dari OR)
+      // bila gak ada yang nilai yang falsy, maka yang terakhir diambil adalah truthy yang paling kanan
+
+      const person = {
+        firstName: "Rio",
+        lastName: "Novanto",
+      };
+      const name = person.firstName || person.lastName;
+      console.info(name);
+      // bila firstName ada value, maka dengan operator OR akan beroutput Rio. bila firstName kosong, akan beroutput lastName
+
+      // truthy // truthy
+      console.info("HELLO" && ""); // ''
+      // truthy // truthy
+      console.info(" " && []); // []
+      // falsy // truthy
+      console.info(null && "NULL"); //null
+    </script>
+  </body>
+</html>
