@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Rest Parameter</title>
+  </head>
+  <body>
+    <script>
+      function sum(name, ...data) {
+        let total = 0;
+        for (const items of data) {
+          total += items;
+        }
+        document.writeln(`<p>Total ${name} is ${total}</p>`);
+      }
+      sum("Orange", 2, 1, 2, 34, 2, 2);
+      sum("Apple", 1, 2, 4, 2, 2, 1, 2, 3);
+      sum("Banana", 2, 3, 3, 4, 1, 24, 23, 23, 2);
+
+      const values = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+      sum("test", values); // output 010,20,30,40,50,60,70,80,90, kenapa? karena values adalah berupa array, maka pada variable data adalah data pertama dari variable data tersebut. jadi gak bisa convert dari rest parameter itu gak ada. maka...
+      sum("test", ...values); // adalah solusinya, fitur ini dinamakan spread syntax, yang mana mengirimkan array ke rest parameter
+
+      function oldSum() {
+        let total = 0;
+        for (const argument of arguments) {
+          total += argument;
+        }
+        document.writeln(`<p>Total is ${total}</p>`);
+      }
+      oldSum(1, 2, 3, 4, 5);
+      // ini disebut arguments, yang mana arguments ini sama seperti rest parameter akan tetapi hanya tidak boleh ada parameter lain atau kosong seperti ini sehingga tidak dapat menentukan parameter-parameter lainnya. sehingga penggunaannya jarang digunakan sekarang ini, karena rest parameter lebih cocok karena dapat menggunakan parameter lainnya.
+    </script>
+  </body>
+</html>

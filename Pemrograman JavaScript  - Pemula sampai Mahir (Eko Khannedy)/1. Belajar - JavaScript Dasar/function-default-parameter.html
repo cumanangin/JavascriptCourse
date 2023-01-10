@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Default Parameter</title>
+  </head>
+  <body>
+    <script>
+      function register(name, gender = "UNKOWN") {
+        console.log(name);
+        console.log(gender);
+      }
+      register();
+      register("rio");
+      register("rio", "LAKIK");
+      register("rio", undefined);
+      register("rio", null); // kenapa null valuenya null bukan default parameter? karena null dianggap itu sudah bernilai yakni null, undefined dianggap tidak ada valuenya
+    </script>
+  </body>
+</html>
